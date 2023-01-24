@@ -1,0 +1,371 @@
+
+R version 4.2.2 (2022-10-31 ucrt) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> print(paste("Number of ways to randomly select 10 bears out of the group recorded:", ways))
+Error in paste("Number of ways to randomly select 10 bears out of the group recorded:",  : 
+  object 'ways' not found
+> #set working directory to the folder where bears.txt is located
+> #set working directory to the folder where bears.txt is located
+> setwd("C:\Users\C0527059\Downloads")
+Error: '\U' used without hex digits in character string starting ""C:\U"
+> bears <- read.table("bears.txt", header = TRUE)
+Error in file(file, "rt") : cannot open the connection
+In addition: Warning message:
+In file(file, "rt") :
+  cannot open file 'bears.txt': No such file or directory
+> 
+> #print first 6 lines of the dataset
+> head(bears, 6)
+Error in head(bears, 6) : object 'bears' not found
+> 
+> #calculate mean age of bears
+> mean_age <- mean(bears$Age)
+Error in mean(bears$Age) : object 'bears' not found
+> print(paste("Mean age: ", mean_age))
+Error in paste("Mean age: ", mean_age) : object 'mean_age' not found
+> 
+> #calculate variance of headwidth
+> var_headwidth <- var(bears$Headwidth)
+Error in is.data.frame(x) : object 'bears' not found
+> print(paste("Variance of headwidth: ", var_headwidth))
+Error in paste("Variance of headwidth: ", var_headwidth) : 
+  object 'var_headwidth' not found
+> 
+> #create a side-by-side box plot to compare weight of bears separated by gender
+> library(ggplot2)
+Error in library(ggplot2) : there is no package called ‘ggplot2’
+> ggplot(data = bears, aes(x = factor(Gender), y = Weight, fill = factor(Gender))) +
++   geom_boxplot() +
++   ggtitle("Weight of Bears by Gender") +
++   xlab("Gender") +
++   ylab("Weight")
+Error in ggplot(data = bears, aes(x = factor(Gender), y = Weight, fill = factor(Gender))) : 
+  could not find function "ggplot"
+> 
+> #determine number of bears measured in the dataset
+> n_bears <- dim(bears)[1]
+Error: object 'bears' not found
+> print(paste("Number of bears: ", n_bears))
+Error in paste("Number of bears: ", n_bears) : object 'n_bears' not found
+> 
+> #calculate number of ways to randomly select 10 bears out of the group recorded
+> from_n <- dim(bears)[1]
+Error: object 'bears' not found
+> ways <- choose(from_n,10)
+Error in choose(from_n, 10) : object 'from_n' not found
+> print(paste("Number of ways to randomly select 10 bears out of the group recorded:", ways))
+Error in paste("Number of ways to randomly select 10 bears out of the group recorded:",  : 
+  object 'ways' not found
+> #set working directory to the folder where bears.txt is located
+> setwd("C:\Users\C0527059\Downloads")
+Error: '\U' used without hex digits in character string starting ""C:\U"
+> bears <- read.table("bears.txt", header = TRUE)
+Error in file(file, "rt") : cannot open the connection
+In addition: Warning message:
+In file(file, "rt") :
+  cannot open file 'bears.txt': No such file or directory
+> 
+> #print first 6 lines of the dataset
+> head(bears, 6)
+Error in head(bears, 6) : object 'bears' not found
+> 
+> #calculate mean age of bears
+> mean_age <- mean(bears$Age)
+Error in mean(bears$Age) : object 'bears' not found
+> print(paste("Mean age: ", mean_age))
+Error in paste("Mean age: ", mean_age) : object 'mean_age' not found
+> 
+> #calculate variance of headwidth
+> var_headwidth <- var(bears$Headwidth)
+Error in is.data.frame(x) : object 'bears' not found
+> print(paste("Variance of headwidth: ", var_headwidth))
+Error in paste("Variance of headwidth: ", var_headwidth) : 
+  object 'var_headwidth' not found
+> 
+> #create a side-by-side box plot to compare weight of bears separated by gender
+> library(ggplot2)
+Error in library(ggplot2) : there is no package called ‘ggplot2’
+> ggplot(data = bears, aes(x = factor(Gender), y = Weight, fill = factor(Gender))) +
++   geom_boxplot() +
++   ggtitle("Weight of Bears by Gender") +
++   xlab("Gender") +
++   ylab("Weight")
+Error in ggplot(data = bears, aes(x = factor(Gender), y = Weight, fill = factor(Gender))) : 
+  could not find function "ggplot"
+> 
+> #determine number of bears measured in the dataset
+> n_bears <- dim(bears)[1]
+Error: object 'bears' not found
+> print(paste("Number of bears: ", n_bears))
+Error in paste("Number of bears: ", n_bears) : object 'n_bears' not found
+> 
+> #calculate number of ways to randomly select 10 bears out of the group recorded
+> from_n <- dim(bears)[1]
+Error: object 'bears' not found
+> ways <- choose(from_n,10)
+Error in choose(from_n, 10) : object 'from_n' not found
+> print(paste("Number of ways to randomly select 10 bears out of the group recorded:", ways))
+Error in paste("Number of ways to randomly select 10 bears out of the group recorded:",  : 
+  object 'ways' not found
+> q()
+
+> > setwd("C:\Users\C0527059\Downloads")
+Error: '\U' used without hex digits in character string starting ""C:\U"
+> setwd("C:\users\C0527059\Downloads")
+Error: '\u' used without hex digits in character string starting ""C:\u"
+> setwd(C:\Users\C0527059\Downloads)
+Error: unexpected symbol in "setwd(C:\Users"
+> setwd?
++ ??setwd
+Error in help.search(c("?", "setwd"), fields = "setwd", package = NULL) : 
+  argument ‘pattern’ must be a single character string
+> setwd("\Users\C0527059\Downloads")
+Error: '\U' used without hex digits in character string starting ""\U"
+> setwd("/Users/C0527059/Downloads")
+> bears <- read.table("bears.txt", header = TRUE)
+> 
+> #print first 6 lines of the dataset
+> head(bears, 6)
+  bears Age Gender Head Body Headwidth Neck Chest Weight
+1     1  19      1   11 53.0         6   16    26     80
+2     2  55      1   17 67.5         9   28    45    344
+3     3  81      1   16 72.0         8   31    54    416
+4     4 115      1   17 72.0        10   32    49    348
+5     5 104      2   16 62.0         7   22    35    166
+6     6 100      2   13 70.0         7   21    41    220
+> #set working directory to the folder where bears.txt is located
+> setwd("/Users/C0527059/Downloads")
+> bears <- read.table("bears.txt", header = TRUE)
+> 
+> #print first 6 lines of the dataset
+> head(bears, 6)
+  bears Age Gender Head Body Headwidth Neck Chest Weight
+1     1  19      1   11 53.0         6   16    26     80
+2     2  55      1   17 67.5         9   28    45    344
+3     3  81      1   16 72.0         8   31    54    416
+4     4 115      1   17 72.0        10   32    49    348
+5     5 104      2   16 62.0         7   22    35    166
+6     6 100      2   13 70.0         7   21    41    220
+> 
+> #calculate mean age of bears
+> mean_age <- mean(bears$Age)
+> print(paste("Mean age: ", mean_age))
+[1] "Mean age:  43.5185185185185"
+> 
+> #calculate variance of headwidth
+> var_headwidth <- var(bears$Headwidth)
+> print(paste("Variance of headwidth: ", var_headwidth))
+[1] "Variance of headwidth:  2.31761006289308"
+> 
+> #create a side-by-side box plot to compare weight of bears separated by gender
+> library(ggplot2)
+Error in library(ggplot2) : there is no package called ‘ggplot2’
+> ggplot(data = bears, aes(x = factor(Gender), y = Weight, fill = factor(Gender))) +
++   geom_boxplot() +
++   ggtitle("Weight of Bears by Gender") +
++   xlab("Gender") +
++   ylab("Weight")
+Error in ggplot(data = bears, aes(x = factor(Gender), y = Weight, fill = factor(Gender))) : 
+  could not find function "ggplot"
+> 
+> #determine number of bears measured in the dataset
+> n_bears <- dim(bears)[1]
+> print(paste("Number of bears: ", n_bears))
+[1] "Number of bears:  54"
+> 
+> #calculate number of ways to randomly select 10 bears out of the group recorded
+> from_n <- dim(bears)[1]
+> ways <- choose(from_n,10)
+> print(paste("Number of ways to randomly select 10 bears out of the group recorded:", ways))
+[1] "Number of ways to randomly select 10 bears out of the group recorded: 23930713170"
+> #set working directory to the folder where bears.txt is located
+> setwd("/Users/C0527059/Downloads")
+> bears <- read.table("bears.txt", header = TRUE)
+> 
+> #print first 6 lines of the dataset
+> head(bears, 6)
+  bears Age Gender Head Body Headwidth Neck Chest Weight
+1     1  19      1   11 53.0         6   16    26     80
+2     2  55      1   17 67.5         9   28    45    344
+3     3  81      1   16 72.0         8   31    54    416
+4     4 115      1   17 72.0        10   32    49    348
+5     5 104      2   16 62.0         7   22    35    166
+6     6 100      2   13 70.0         7   21    41    220
+> 
+> #calculate mean age of bears
+> mean_age <- mean(bears$Age)
+> print(paste("Mean age: ", mean_age))
+[1] "Mean age:  43.5185185185185"
+> 
+> #calculate variance of headwidth
+> var_headwidth <- var(bears$Headwidth)
+> print(paste("Variance of headwidth: ", var_headwidth))
+[1] "Variance of headwidth:  2.31761006289308"
+> 
+> #Install ggplot2 package
+> install.packages("ggplot2")
+--- Please select a CRAN mirror for use in this session ---
+also installing the dependencies ‘colorspace’, ‘utf8’, ‘farver’, ‘labeling’, ‘munsell’, ‘R6’, ‘RColorBrewer’, ‘viridisLite’, ‘fansi’, ‘magrittr’, ‘pillar’, ‘pkgconfig’, ‘cli’, ‘glue’, ‘gtable’, ‘isoband’, ‘lifecycle’, ‘rlang’, ‘scales’, ‘tibble’, ‘vctrs’, ‘withr’
+
+
+  There are binary versions available but the source versions are later:
+           binary source needs_compilation
+colorspace  2.0-3  2.1-0              TRUE
+fansi       1.0.3  1.0.4              TRUE
+vctrs       0.5.1  0.5.2              TRUE
+
+  Binaries will be installed
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/colorspace_2.0-3.zip'
+Content type 'application/zip' length 2627239 bytes (2.5 MB)
+downloaded 2.5 MB
+
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/utf8_1.2.2.zip'
+Content type 'application/zip' length 150081 bytes (146 KB)
+downloaded 146 KB
+
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/farver_2.1.1.zip'
+Content type 'application/zip' length 1512622 bytes (1.4 MB)
+downloaded 1.4 MB
+
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/labeling_0.4.2.zip'
+Content type 'application/zip' length 62511 bytes (61 KB)
+downloaded 61 KB
+
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/munsell_0.5.0.zip'
+Content type 'application/zip' length 244845 bytes (239 KB)
+downloaded 239 KB
+
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/R6_2.5.1.zip'
+Content type 'application/zip' length 84285 bytes (82 KB)
+downloaded 82 KB
+
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/RColorBrewer_1.1-3.zip'
+Content type 'application/zip' length 55837 bytes (54 KB)
+downloaded 54 KB
+
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/viridisLite_0.4.1.zip'
+Content type 'application/zip' length 1300046 bytes (1.2 MB)
+downloaded 1.2 MB
+
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/fansi_1.0.3.zip'
+Content type 'application/zip' length 313045 bytes (305 KB)
+downloaded 305 KB
+
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/magrittr_2.0.3.zip'
+Content type 'application/zip' length 227112 bytes (221 KB)
+downloaded 221 KB
+
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/pillar_1.8.1.zip'
+Content type 'application/zip' length 689737 bytes (673 KB)
+downloaded 673 KB
+
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/pkgconfig_2.0.3.zip'
+Content type 'application/zip' length 22497 bytes (21 KB)
+downloaded 21 KB
+
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/cli_3.6.0.zip'
+Content type 'application/zip' length 1298912 bytes (1.2 MB)
+downloaded 1.2 MB
+
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/glue_1.6.2.zip'
+Content type 'application/zip' length 161911 bytes (158 KB)
+downloaded 158 KB
+
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/gtable_0.3.1.zip'
+Content type 'application/zip' length 164082 bytes (160 KB)
+downloaded 160 KB
+
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/isoband_0.2.7.zip'
+Content type 'application/zip' length 1960772 bytes (1.9 MB)
+downloaded 1.9 MB
+
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/lifecycle_1.0.3.zip'
+Content type 'application/zip' length 138911 bytes (135 KB)
+downloaded 135 KB
+
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/rlang_1.0.6.zip'
+Content type 'application/zip' length 1575595 bytes (1.5 MB)
+downloaded 1.5 MB
+
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/scales_1.2.1.zip'
+Content type 'application/zip' length 615674 bytes (601 KB)
+downloaded 601 KB
+
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/tibble_3.1.8.zip'
+Content type 'application/zip' length 733059 bytes (715 KB)
+downloaded 715 KB
+
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/vctrs_0.5.1.zip'
+Content type 'application/zip' length 1361048 bytes (1.3 MB)
+downloaded 1.3 MB
+
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/withr_2.5.0.zip'
+Content type 'application/zip' length 232101 bytes (226 KB)
+downloaded 226 KB
+
+trying URL 'https://muug.ca/mirror/cran/bin/windows/contrib/4.2/ggplot2_3.4.0.zip'
+Content type 'application/zip' length 4215896 bytes (4.0 MB)
+downloaded 4.0 MB
+
+package ‘colorspace’ successfully unpacked and MD5 sums checked
+package ‘utf8’ successfully unpacked and MD5 sums checked
+package ‘farver’ successfully unpacked and MD5 sums checked
+package ‘labeling’ successfully unpacked and MD5 sums checked
+package ‘munsell’ successfully unpacked and MD5 sums checked
+package ‘R6’ successfully unpacked and MD5 sums checked
+package ‘RColorBrewer’ successfully unpacked and MD5 sums checked
+package ‘viridisLite’ successfully unpacked and MD5 sums checked
+package ‘fansi’ successfully unpacked and MD5 sums checked
+package ‘magrittr’ successfully unpacked and MD5 sums checked
+package ‘pillar’ successfully unpacked and MD5 sums checked
+package ‘pkgconfig’ successfully unpacked and MD5 sums checked
+package ‘cli’ successfully unpacked and MD5 sums checked
+package ‘glue’ successfully unpacked and MD5 sums checked
+package ‘gtable’ successfully unpacked and MD5 sums checked
+package ‘isoband’ successfully unpacked and MD5 sums checked
+package ‘lifecycle’ successfully unpacked and MD5 sums checked
+package ‘rlang’ successfully unpacked and MD5 sums checked
+package ‘scales’ successfully unpacked and MD5 sums checked
+package ‘tibble’ successfully unpacked and MD5 sums checked
+package ‘vctrs’ successfully unpacked and MD5 sums checked
+package ‘withr’ successfully unpacked and MD5 sums checked
+package ‘ggplot2’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\C0527059\AppData\Local\Temp\Rtmp8udBLL\downloaded_packages
+> #create a side-by-side box plot to compare weight of bears separated by gender
+> library(ggplot2)
+> ggplot(data = bears, aes(x = factor(Gender), y = Weight, fill = factor(Gender))) +
++   geom_boxplot() +
++   ggtitle("Weight of Bears by Gender") +
++   xlab("Gender") +
++   ylab("Weight")
+> 
+> #determine number of bears measured in the dataset
+> n_bears <- dim(bears)[1]
+> print(paste("Number of bears: ", n_bears))
+[1] "Number of bears:  54"
+> 
+> #calculate number of ways to randomly select 10 bears out of the group recorded
+> from_n <- dim(bears)[1]
+> ways <- choose(from_n,10)
+> print(paste("Number of ways to randomly select 10 bears out of the group recorded:", ways))
+[1] "Number of ways to randomly select 10 bears out of the group recorded: 23930713170"
+> save.image("M:\\Stats\\R assignment 1")
+> 
