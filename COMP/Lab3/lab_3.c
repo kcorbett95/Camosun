@@ -15,12 +15,12 @@
 #define g 9.80665  //Gravitational constant
 
 //declare functions
-float UserInput();
+double UserInput();
 double density(double);
 /*
  * 
  */
-int main(int argc, char** argv) {
+int main(void) {
 
     //declare variables
     double height, mass, drag, area, time_step, time, V, A, d, Fg, Fd, Fnet;
@@ -37,9 +37,7 @@ int main(int argc, char** argv) {
     printf("\nEnter time-step size: ");
     time_step = UserInput();
     
-    time = 0;   //set time to zero
-    V = 0;      //set initial velocity to zero
-    
+    time, V=0, A = 0;   //set initial time, velocity, accel
     //table heading
     printf("Time   Height   Velocity\n");  
     
@@ -48,23 +46,26 @@ int main(int argc, char** argv) {
         
         //increment Velocity, Accel, and time based on time step
         time = time_step*i;
+        //print values
+        
+        
         //Calculate variables
         d = density(height);
         Fg = mass*g;
         Fd = -0.5*drag*d*area*(V*V);
         Fnet = Fg + Fd;
         A = Fnet/mass;      //solve for acceleration A
-        //print values
-        printf("%*f   %*f   %*f\n",2,time, 5,height, 3,V);
         
-        V = A*time;
-        height = height - (V * time);
+        V = V + A*time_step;
+        height = height - (V * time_step);
+        printf("%.2f   %.1f   %.2f\n", time, height, V);
+       
     }
     
     return (EXIT_SUCCESS);
 }
 
-float UserInput(void){
+double UserInput(void){
     //takes a user input and returns it... I don't want 1,000 scanf()'s in main lol
     double a;
     scanf("%lf", &a);
