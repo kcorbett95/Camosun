@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>c166.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -30,7 +31,7 @@
   <confs>
     <conf name="Debug" type="1">
       <toolsSet>
-        <compilerSet>MinGW|MinGW</compilerSet>
+        <compilerSet>Cygwin|Cygwin</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
@@ -40,6 +41,8 @@
         </cTool>
       </compileType>
       <item path="Lab4.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="c166.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -64,6 +67,8 @@
         </asmTool>
       </compileType>
       <item path="Lab4.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="c166.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

@@ -17,14 +17,15 @@
 //declare functions
 double UserInput(void);
 double density(double);
+
 /*
  * 
  */
 int main(void) {
 
     //declare variables
-    double height, mass, drag, area, time_step, time, V, V_term, A, d, Fg, Fd, Fnet;
-    
+    double height, mass, drag, area, time_step, V_term, d, Fg, Fd, Fnet;
+
     //Prompt user for  inputs
     printf("\nEnter drop height in metres: ");
     height = UserInput();
@@ -36,44 +37,43 @@ int main(void) {
     area = UserInput();
     printf("\nEnter time-step size: ");
     time_step = UserInput();
-    
-    time, V=0, A = 0;   //set initial time, velocity, accel
+
+    double time, V = 0, A; //set initial time, velocity, accel
     //table heading
-    printf("Time   Height   Velocity\n");  
-    
+    printf("Time   Height   Velocity\n");
+
     //for loop to run 100k calculations
-    for(int i=0; i<100000; i++){
-        
+    for (int i = 0; i < 100000; i++) {
+
         //increment Velocity, Accel, and time based on time step
         time = time_step*i;
         //print values
-        printf("%.2f   %.1f   %.2f\n", time, height, V);
-        
+        printf("%5.2f%8.1f%7.2f\n", time, height, V);
+
         //Calculate variables
         d = density(height);
         Fg = mass*g;
-        Fd = -0.5*drag*d*area*(V*V);
+        Fd = -0.5 * drag * d * area * (V * V);
         Fnet = Fg + Fd;
-        A = Fnet/mass;      //solve for acceleration A
-        
-        V = V + A*time_step;    //Solve Velocity and height
+        A = Fnet / mass; //solve for acceleration A
+
+        V = V + A*time_step; //Solve Velocity and height
         height = height - (V * time_step);
-        V_term = sqrt((2*Fg)/(drag*d*area));    //Terminal Velocity calc
         //break out of loop when height is negative, and print terminal velocity       
-        if(height<0){
-            
-            printf("Terminal velocity is %.2f",V_term);
+        if (height < 0) {
             break;
         }
     }
-    
+    V_term = sqrt((2 * Fg) / (drag * d * area)); //Terminal Velocity calc
+    printf("Terminal velocity is %.2f", V_term);
+
     return (EXIT_SUCCESS);
 }
 
-double UserInput(void){
+double UserInput(void) {
     //takes a user input and returns it... I don't want 1,000 scanf()'s in main lol
     double a;
-  
+
     scanf("%lf", &a);
     return (a);
 }
@@ -87,13 +87,13 @@ double UserInput(void){
  * @return Density in SI units
  */
 double density(double altitude) {
-  const double p0 = 101.325e3; // Sea-level std atmospheric pressure, Pascals
-  const double T0 = 288.15;    // Sea-level std temperature, Kelvins
-  const double L  = 0.0065;    // Temperature lapse rate, K/m
-  const double R  = 8.31447;   // Ideal gas constant, J/(mol.K)
-  const double M  = 0.0289644; // Molar mass of dry air, kg/mol
-  double p, T;
-  T = T0 - L*altitude;
-  p = p0 * pow((1 - (L*altitude)/T0), (g*M)/(R*L)); //Presure at altitude
-  return p*M/(R*T); //return density
+    const double p0 = 101.325e3; // Sea-level std atmospheric pressure, Pascals
+    const double T0 = 288.15; // Sea-level std temperature, Kelvins
+    const double L = 0.0065; // Temperature lapse rate, K/m
+    const double R = 8.31447; // Ideal gas constant, J/(mol.K)
+    const double M = 0.0289644; // Molar mass of dry air, kg/mol
+    double p, T;
+    T = T0 - L*altitude;
+    p = p0 * pow((1 - (L * altitude) / T0), (g * M) / (R * L)); //Presure at altitude
+    return p * M / (R * T); //return density
 }
