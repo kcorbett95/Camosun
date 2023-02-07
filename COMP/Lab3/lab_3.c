@@ -15,7 +15,7 @@
 #define g 9.80665  //Gravitational constant
 
 //declare functions
-double UserInput();
+double UserInput(void);
 double density(double);
 /*
  * 
@@ -23,7 +23,7 @@ double density(double);
 int main(void) {
 
     //declare variables
-    double height, mass, drag, area, time_step, time, V, A, d, Fg, Fd, Fnet;
+    double height, mass, drag, area, time_step, time, V, V_term, A, d, Fg, Fd, Fnet;
     
     //Prompt user for  inputs
     printf("\nEnter drop height in metres: ");
@@ -42,12 +42,12 @@ int main(void) {
     printf("Time   Height   Velocity\n");  
     
     //for loop to run 100k calculations
-    for(int i=0; i<10; i++){
+    for(int i=0; i<100000; i++){
         
         //increment Velocity, Accel, and time based on time step
         time = time_step*i;
         //print values
-        
+        printf("%.2f   %.1f   %.2f\n", time, height, V);
         
         //Calculate variables
         d = density(height);
@@ -56,10 +56,15 @@ int main(void) {
         Fnet = Fg + Fd;
         A = Fnet/mass;      //solve for acceleration A
         
-        V = V + A*time_step;
+        V = V + A*time_step;    //Solve Velocity and height
         height = height - (V * time_step);
-        printf("%.2f   %.1f   %.2f\n", time, height, V);
-       
+        V_term = sqrt((2*Fg)/(drag*d*area));    //Terminal Velocity calc
+        //break out of loop when height is negative, and print terminal velocity       
+        if(height<0){
+            
+            printf("Terminal velocity is %.2f",V_term);
+            break;
+        }
     }
     
     return (EXIT_SUCCESS);
@@ -68,6 +73,7 @@ int main(void) {
 double UserInput(void){
     //takes a user input and returns it... I don't want 1,000 scanf()'s in main lol
     double a;
+  
     scanf("%lf", &a);
     return (a);
 }

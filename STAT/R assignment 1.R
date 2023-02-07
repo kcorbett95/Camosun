@@ -1,5 +1,5 @@
 #set working directory to the folder where bears.txt is located
-setwd("/Users/C0527059/Downloads")
+setwd("/Users/Kev/Downloads")
 bears <- read.table("bears.txt", header = TRUE)
 
 #print first 6 lines of the dataset
@@ -13,15 +13,8 @@ print(paste("Mean age: ", mean_age))
 var_headwidth <- var(bears$Headwidth)
 print(paste("Variance of headwidth: ", var_headwidth))
 
-#Install ggplot2 package
-install.packages("ggplot2")
 #create a side-by-side box plot to compare weight of bears separated by gender
-library(ggplot2)
-ggplot(data = bears, aes(x = factor(Gender), y = Weight, fill = factor(Gender))) +
-  geom_boxplot() +
-  ggtitle("Weight of Bears by Gender") +
-  xlab("Gender") +
-  ylab("Weight")
+boxplot(Weight~Gender,data=bears,main="K. Corbett: Weight of Bears by Gender",xlab="Gender",ylab="Weight",col="blue",border="black")
 
 #determine number of bears measured in the dataset
 n_bears <- dim(bears)[1]
@@ -41,6 +34,7 @@ velocities <- c(44,36,40,34,49,47,49,54,52,51,52,48,55,46,29,51,54,54,55,49,44,4
 mean_velocity <- mean(velocities)
 print(paste("Mean velocity: ", mean_velocity))
 median_velocity <- median(velocities)
+print(paste("Median velocity: ", median_velocity))
 
 # Determine if data is symmetric, skewed left, or skewed right
 if(mean_velocity == median_velocity){
@@ -52,29 +46,13 @@ if(mean_velocity == median_velocity){
 }
 
 # Create histogram
-library(ggplot2)
-ggplot(data = velocities, aes(x = velocities)) +
-  geom_histogram(color = "blue", fill = "blue") +
-  ggtitle("Air Velocity Histogram") +
-  xlab("Velocity") +
-  ylab("Frequency")
+hist(velocities,main="K. Corbett: Air Velocity Histogram",col="light blue")
 
 # Calculate standard deviation and IQR
 std_velocity <- sd(velocities)
+print(paste("Standard Deviation: ",std_velocity))
 iqr_velocity <- IQR(velocities)
-
-# Determine which measure of spread to use
-if(std_velocity > iqr_velocity){
-  print("Standard deviation is a better measure of spread for this dataset.")
-} else {
-  print("IQR is a better measure of spread for this dataset.")
-}
+print(paste("IQR: ",iqr_velocity))
 
 # Create boxplot
-ggplot(data = velocities, aes(x = "", y = velocities)) +
-  geom_boxplot(width = 0.5, color = "blue") +
-  ggtitle("Air Velocity Boxplot") +
-  ylab("Velocity") +
-  theme(axis.title.y = element_text(size = rel(1.5)),
-        axis.text.y = element_text(size = rel(1.5)))+
-  coord_flip()
+boxplot(velocities,main="K. Corbett: Boxplot of Air Velocities",xlab="Velocity",col="blue",border="black",horizontal=TRUE)

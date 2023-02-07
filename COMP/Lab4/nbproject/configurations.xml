@@ -12,7 +12,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>lab_3.c</itemPath>
+      <itemPath>Lab4.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -39,7 +39,7 @@
           <standard>3</standard>
         </cTool>
       </compileType>
-      <item path="lab_3.c" ex="false" tool="0" flavor2="0">
+      <item path="Lab4.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -63,7 +63,7 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="lab_3.c" ex="false" tool="0" flavor2="0">
+      <item path="Lab4.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
   </confs>

@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=MinGW-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/MinGW-Windows
-CND_ARTIFACT_NAME_Debug=lab3
-CND_ARTIFACT_PATH_Debug=dist/Debug/MinGW-Windows/lab3
+CND_ARTIFACT_NAME_Debug=lab4
+CND_ARTIFACT_PATH_Debug=dist/Debug/MinGW-Windows/lab4
 CND_PACKAGE_DIR_Debug=dist/Debug/MinGW-Windows/package
-CND_PACKAGE_NAME_Debug=lab3.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/MinGW-Windows/package/lab3.tar
+CND_PACKAGE_NAME_Debug=lab4.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/MinGW-Windows/package/lab4.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=lab3
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/lab3
+CND_ARTIFACT_NAME_Release=lab4
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/lab4
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=lab3.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/lab3.tar
+CND_PACKAGE_NAME_Release=lab4.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/lab4.tar
 #
 # include compiler specific variables
 #

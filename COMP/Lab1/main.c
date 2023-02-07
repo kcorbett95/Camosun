@@ -17,40 +17,41 @@
 #include <math.h>
 
 //Declaring functions
-float UserInput();      
-float MakeChange(float a, float b);
+double UserInput(const char *message);      
+double MakeChange(double payment, const double price, const char *singleName, const char *pluralName);
 
 int main(void) {
     
     float price, payment;      //Declare variables
     
-    printf("Enter price: ");        //prompt user for price input
-    price = UserInput();            //user input function 
-    //printf("******debug price = %lf******\n", price);
+    printf("debug 1");        //prompt user for price input
+    price = UserInput("Enter price: ");            //user input function 
+    printf("******debug price = %lf******\n", price);
     printf("Enter payment: ");      //prompt user for payment input
-    payment = UserInput();          //user input function 
+    //payment = UserInput();          //user input function 
     //printf("******debug payment = %lf******\n", payment);
     MakeChange(payment, price);     //call MakeChange function to clean up main()
     
     return (EXIT_SUCCESS);
 }
 
-float UserInput(void){
+float UserInput(const char *message){
     //takes a user input and returns it... I don't want 1,000 scanf()'s in main lol
     double a;
+    printf("%s",message);
     scanf("%lf", &a);
     return (a);
 }
 
-float MakeChange(float a, float b){
+float MakeChange(double paymente, const double price, const char *singleName, const char *pluralName){
     
     //declaring variables
-    float change, round;
+    double change, round;
     int numbills;
-    float value[8] = {20,10,5,2,1,.25,0.1,0.05};    //array of denomination values
+    double value[8] = {20,10,5,2,1,.25,0.1,0.05};    //array of denomination values
     
     //math to round to nearest nickel
-    change = a - b;     //take arguments from main()
+    change = payment - price;     //take arguments from main()
     round = floor(change * 20 + 0.5) / 20;      //multiply by 20 and add 0.5, round down, and divide result by 20 to get nearest 0.05
     
     //check if payment is sufficient or exact change
