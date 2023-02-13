@@ -4,19 +4,22 @@
  */
 
 /* 
- * File:   c166.h
+ * File:   changeItem.h
  * Author: C0527059
  *
  * Created on February 7, 2023, 8:48 a.m.
  */
 
-#ifndef c166_H
-#define c166_H
+#ifndef changeItem_H
+#define changeItem_H
 
+#include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 
 //declare commonly used functions
 double UserInput(const char *message);
+double changeItem(double payment, const double price, const char *singleName, const char *pluralName, const double value);
 
 #ifdef __cplusplus
 extern "C" {
@@ -29,5 +32,5 @@ extern "C" {
 }
 #endif
 
-#endif /* 166_H */
+#endif /* changeItem_H */
 
