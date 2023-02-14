@@ -1,8 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/cFiles/main.c to edit this template
- */
-
 /* Program to prompt user for purchase price and amount tendered and output 
  * total change due in number and type of bills and change, rounded to nearest 
  * $0.05
@@ -32,7 +27,7 @@ int main(void) {
     //error handling
     if (price < 0) {
         printf("Price must be positive");
-        return;
+        return EXIT_FAILURE;
     }
     
     //prompt user for payment input
@@ -42,7 +37,7 @@ int main(void) {
     //error handling
     if (payment < 0) {
         printf("Payment must be positive");
-        return;
+        return EXIT_FAILURE;
     }
     
     //math to round to nearest nickel
@@ -51,10 +46,10 @@ int main(void) {
     //check if payment is sufficient or exact change, error handling
     if (change < 0) {
         printf("Insufficient Funds, $%.2f owed\n", change*-1);
-        return;
+        return EXIT_FAILURE;
     }if (change == 0) {
         printf("Exact Change\n");
-        return;
+        return EXIT_SUCCESS;
     }
     //print results, calc change due
     printf("Change due is: $%.2f\n", change);
