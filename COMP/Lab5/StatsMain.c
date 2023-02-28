@@ -13,7 +13,7 @@
 #include "statistics.h"
 //double avg(const double sum, const int count);
 static void printStats(FILE *dest, const int count, const double
-       theMean, const double stddev);
+        mean, const double sdv);
 
 /*
  * take cmd line arguments to read numbers from a given file, perform stats math
@@ -32,27 +32,38 @@ int main(int argc, char *argv[]) {
     infile = fopen(argv[1], "r");
     //error handling, if the file is empty or incorrect filetype
     if (infile == NULL) {
-        fprintf(stderr, "\nThe file could  not be opened");
+        fprintf(stderr, "\nThe file could not be opened");
         return EXIT_FAILURE;
     }
 
     //sum values from file, pass to mean function
-    printf("%s contains: ", argv[1]);
-    double x, sum=0.0;
+    double x, sum, sumsq = 0.0;
     int count = 0;
     while (fscanf(infile, "%lf", &x) == 1) {
-        printf("%lf ", x);
+        //printf("*****DEBUG***** value = %lf ", x);
         count++;
         sum = sum + x;
-        //printf("\n*****DEBUG***** count = %d, sum = %lf\n", count, sum);
+        sumsq = sumsq + x*x;
+        //printf("\n*****DEBUG***** count = %d, sum = %lf, sumsq = %lf\n", count, sum, sumsq);
     }
-
-
-    double m, sdv;
-    
-    m = avg(sum, count);
-//close the file
+    //close the file
     fclose(infile);
+    
+    //Compute mean and Sample Std Dev
+    double m, sdv = 0.0;
+
+    m = avg(sum, count);
+
+    sdv = ssdev(sum, sumsq, count);
+
+    printf("%s contains: %d Values\n", argv[1], count);
+    printf("Mean: %lf\n", m);
+    printf("Sample Standard Deviation: %lf\n", sdv);
+
     return (EXIT_SUCCESS);
 }
 
+void printStats(FILE *dest, const int count, const double
+        mean, const double sdv) {
+
+}
