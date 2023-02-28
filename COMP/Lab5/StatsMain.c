@@ -1,8 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/cFiles/main.c to edit this template
- */
-
 /* 
  * File:   StatsMain.c
  * Author: C0527059
@@ -13,7 +8,6 @@
 #include "statistics.h"
 #define PREFIX "Result_"
 
-//double avg(const double sum, const int count);
 static void printStats(FILE *outfile, const int count, const double
         mean, const double sdv);
 
@@ -22,9 +16,8 @@ static void printStats(FILE *outfile, const int count, const double
  * and send results to output file of the same filename
  */
 int main(int argc, char *argv[]) {
-
+    //print error if not enough arguments entered in cmd line
     if (argc != 2) {
-        //print error if not enough arguments entered in cmd line
         fprintf(stderr, "usage: %s filename.txt \n", basename(argv[0]));
         return EXIT_FAILURE;
     }
@@ -37,7 +30,7 @@ int main(int argc, char *argv[]) {
         return EXIT_FAILURE;
     }
 
-    //sum values from file, pass to mean function
+    //math from values read from input file
     double x, sum, sumsq = 0.0;
     int count = 0;
     while (fscanf(infile, "%lf", &x) == 1) {
@@ -55,7 +48,7 @@ int main(int argc, char *argv[]) {
     double m, sdv = 0.0;
     m = avg(sum, count);
     sdv = ssdev(sum, sumsq, count);
-    
+
     //Allocate memory for output file
     int nChar = strlen(PREFIX) + strlen(argv[1]) + 1; //length of filename array
     char *filename = (char*) malloc(nChar); //request chunk of memory for output file
@@ -68,14 +61,11 @@ int main(int argc, char *argv[]) {
         fprintf(stderr, "The file %s could not be opened, error: %s\n", filename, strerror(errno));
         EXIT_FAILURE;
     }
-    
+
     //Print stats values to console and output file
-    //printf("%s contains: %d Values\n", argv[1], count);
-    //printf("Mean: %lf\n", m);
-    //printf("Sample Standard Deviation: %lf\n", sdv);
     printStats(outfile, count, m, sdv);
     printStats(stdout, count, m, sdv);
-    
+
     //close output file
     fclose(outfile);
 

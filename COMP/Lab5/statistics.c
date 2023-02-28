@@ -26,6 +26,7 @@ double ssdev(const double sum, const double sumsq, const int count){
         return EXIT_FAILURE;
     }
     
+    //compute standard deviation
     sdv = sqrt(((count*sumsq)-(sum*sum))/(count*(count - 1)));
     
     return(sdv);
