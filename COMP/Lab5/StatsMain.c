@@ -45,6 +45,11 @@ int main(int argc, char *argv[]) {
     fclose(infile);
 
     //Compute mean and Sample Std Dev
+    //error handling for #entries
+    if(count<2){
+        fprintf(stderr,"\nInsufficient Entries for Sdv function");
+        return EXIT_FAILURE;
+    }
     double m, sdv = 0.0;
     m = avg(sum, count);
     sdv = ssdev(sum, sumsq, count);
@@ -61,6 +66,7 @@ int main(int argc, char *argv[]) {
         fprintf(stderr, "The file %s could not be opened, error: %s\n", filename, strerror(errno));
         EXIT_FAILURE;
     }
+    free(filename);
 
     //Print stats values to console and output file
     printStats(outfile, count, m, sdv);
