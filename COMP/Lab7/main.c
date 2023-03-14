@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/cFiles/main.c to edit this template
- */
 
 /* 
  * File:   main.c
@@ -23,7 +19,7 @@ int main() {
     printVector(nums, N_NUMS);
 
     for (int i = 0; i < N_NUMS - 1; i += 2) {
-        swap(&nums[i], &nums[i + 1]);
+        swap(nums+i, nums+i+1);
     }
     printf("Adjacent words swapped:\n");
     printVector(nums, N_NUMS);
