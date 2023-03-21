@@ -50,7 +50,7 @@ void swap(WORD *x, WORD *y) {
  * and WORD_FORMAT has been #define'd */
 void printVector(const WORD *vec, const int N) {
     for (int i = 0; i < N; i++) {
-        printf(WORD_FORMAT, *(vec+i));
+        printf(WORD_FORMAT, *vec++);
     }
     printf("\n");
 }
