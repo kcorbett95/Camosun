@@ -24,6 +24,7 @@ extern "C" {
 #endif
     
 #define Z_FORMAT "%9.4lf%+9.4lfi"
+#define PI 3.14159265359
     
 typedef struct {
     double real;
@@ -35,7 +36,10 @@ complex subtract(complex a, complex b);
 complex multiply(complex a, complex b);
 complex divide(complex a, complex b);
 void print_complex(complex z);
-
+complex conjugate(const complex a);
+double magnitude(const complex a);
+/* Returned angle must be in the correct quadrant! */
+double angle(const complex a);
 
 
 #ifdef __cplusplus

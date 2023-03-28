@@ -33,3 +33,24 @@ complex divide(complex a, complex b) {
 void print_complex(complex z) {
     printf("%9.4lf %+9.4lfi\n", z.real, z.imaginary);
 }
+
+complex conjugate (const complex a){
+    complex result;
+    result.real = (a.real);
+    result.imaginary = (0 - a.imaginary);
+    return result;
+}
+
+double magnitude(const complex a){
+    double result;
+    result = sqrt(((a.real * a.real)) + ((a.imaginary * a.imaginary)));
+    return result;
+}
+
+double angle(const complex a){
+  double result;
+if(a.imaginary < 0){
+    result = PI + atan2(a.imaginary, a.real);
+}  
+else result = atan2(a.imaginary, a.real);
+}
