@@ -18,7 +18,7 @@ int main(int ac, char *av[]) {
         Choice choice;
 	int nValid;
         do {
-            printf("Enter %d to add to front of queue, \n%d to remove from front of queue, \n%d to add to rear of queue, \n%d to remove from rear of queue, \nor %d to print contents "
+            printf("Enter: \n%d to add to front of queue, \n%d to remove from front of queue, \n%d to add to rear of queue, \n%d to remove from rear of queue, \nor %d to print contents "
 		   "(%d to quit): ", ENQUEUEFRONT, DEQUEUEFRONT, ENQUEUEREAR, DEQUEUEREAR, PRINT, QUIT);
             nValid = scanf("%d", &choice);
 	    while (getchar() != '\n') { } // Get rid of rest of line
