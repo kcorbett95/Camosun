@@ -5,7 +5,7 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>../CPP Header.h</itemPath>
-      <itemPath>surveyingHeader.h</itemPath>
+      <itemPath>gradesHeader.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -14,7 +14,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>surveyingMain.cpp</itemPath>
+      <itemPath>gradesMain.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -40,9 +40,9 @@
       </compileType>
       <item path="../CPP Header.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="surveyingHeader.h" ex="false" tool="3" flavor2="0">
+      <item path="gradesHeader.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="surveyingMain.cpp" ex="false" tool="1" flavor2="0">
+      <item path="gradesMain.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -67,9 +67,9 @@
       </compileType>
       <item path="../CPP Header.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="surveyingHeader.h" ex="false" tool="3" flavor2="0">
+      <item path="gradesHeader.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="surveyingMain.cpp" ex="false" tool="1" flavor2="0">
+      <item path="gradesMain.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

@@ -9,16 +9,13 @@
  *
  * Created on September 13, 2023, 2:41 PM
  */
-#include <cstdlib>
-#include <iostream>
-#include <cmath>
-#include <string>
 
-#ifndef CPP_HEADER_H
-#define CPP_HEADER_H
+#ifndef GRADESHEADER_H
+#define GRADESHEADER_H
 
 //Function prototypes for forward - referenced functions
+double getUserInput(double &value);
+//void outputResults(const double angles[], const double distances[], const int numLights);
 
-
-#endif /* CPP_HEADER_H */
+#endif /* GRADESHEADER_H */
 
