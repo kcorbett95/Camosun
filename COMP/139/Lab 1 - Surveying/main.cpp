@@ -47,16 +47,16 @@ int main(int argc, char *argv[]) {
     angles[0] = 0;
     for (int i = 0; i < nLights; i++) {
         angles[i + 1] = ((PI - ((i + 1) * theta)) / 2) - b;
-        cout << "DEBUG angle[" << i + 1 << "]: " << angles[i + 1]*(180 / PI) << endl;
+        //cout << "DEBUG angle[" << i + 1 << "]: " << angles[i + 1]*(180 / PI) << endl;
     }
     //Compute Distances
     distances[0] = 0;
     for (int i = 0; i < nLights; i++) {
         distances[i+1] = 2*(radius*(sin((i+1)*(theta)/2)));
-        cout << "DEBUG dist[" << i + 1 << "]: " << distances[i + 1] << endl;
+        //cout << "DEBUG dist[" << i + 1 << "]: " << distances[i + 1] << endl;
     }
     //output results
-    //outputResults(angles[], distances[], nLights);
+    outputResults(angles, distances, nLights);
 
     return 0;
 }
