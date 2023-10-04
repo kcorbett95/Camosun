@@ -177,7 +177,7 @@ bool testSphericalToRectangular2(void) {
     // I should delete the array cart, but I won't in case you
     // did your code incorrectly!
     // I'll catch you later if you did...
-    delete[] cart;
+    // delete[] cart;
 
     return success;
 }
@@ -213,8 +213,8 @@ bool testSphericalToRectangular3(void) {
 
     // I should delete the array cart, but I won't in case you
     // did your code incorrectly!
-    delete[] cart;
-    delete[] evilCart;
+    // delete[] cart;
+    // delete[] evilCart;
 
     return success;
 }

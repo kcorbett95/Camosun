@@ -10,7 +10,7 @@ using namespace std;
 //y = Rsinφsinθ
 //z = Rcosφ
 double *sphericalToRectangular (double r, double azimuth, double inclination){
-    double* rectangular = new double(3);
+    double* rectangular = new double(3); //create fresh array each time fn is called
     double x = r*sin(inclination)*cos(azimuth);
     double y = r*sin(inclination)*sin(azimuth);
     double z = r*cos(inclination);

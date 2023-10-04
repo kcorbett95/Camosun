@@ -19,7 +19,7 @@ typedef struct {
     double inclination; //-pi to pi
 } SphericalCoords;
 
-double *sphericalToRectangular (double r, double azimuth, double inclination=0);
+double *sphericalToRectangular (double r, double azimuth, double inclination=(M_PI/2));
 SphericalCoords rectangularToSpherical (double x, double y, double z=0);  
 inline double getRadius (double x, double y, double z=0);
 
