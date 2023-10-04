@@ -10,7 +10,6 @@
 #include <iostream>
 #include <cmath>
 #include "spherical.hpp"
-#include "CPP Header.h"
 
 using namespace std;
 
