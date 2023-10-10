@@ -35,20 +35,18 @@ int main(int argc, char** argv) {
     } else {
         //read data
         string word;
-        char c;
+        char c, next;
         while (input.eof() == false) { //read until end of file
-            input.get(c); //get first char 
-//            input.putback(c); //put first char back
-//            cin >> ws; //remove leading whitespace
-            int c = input.peek();
-            if (isdigit(c)) { //determine if number or word
+            next = input.peek(); //get first char 
+            if (isdigit(next)) { //determine if number or word
                 int n;
                 input >> n;
                 output << "Found int: " << n << endl;
-            } else {
-                //input.putback(c);
+            } else if(isalpha(next) || ispunct(next)){  //print word and word length
                 input >> word;
                 output << "Found a " << word.length() << " character word: " << word << endl;
+            } else {
+                input.get(c);   //move along input file if blank space or newline
             }
         }
         input.close();
