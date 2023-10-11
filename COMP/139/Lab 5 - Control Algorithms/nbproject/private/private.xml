@@ -9,8 +9,11 @@
         <group>
             <file>file:/M:/Camosun.git/Camosun/COMP/139/Lab%205%20-%20Control%20Algorithms/PID_Controller.cpp</file>
             <file>file:/M:/Camosun.git/Camosun/COMP/139/Lab%205%20-%20Control%20Algorithms/ProportionalController.hpp</file>
+            <file>file:/M:/Camosun.git/Camosun/COMP/139/Lab%205%20-%20Control%20Algorithms/Controller.hpp</file>
             <file>file:/M:/Camosun.git/Camosun/COMP/139/Lab%205%20-%20Control%20Algorithms/ProportionalController.cpp</file>
+            <file>file:/M:/Camosun.git/Camosun/COMP/139/Lab%205%20-%20Control%20Algorithms/Plant.cpp</file>
             <file>file:/M:/Camosun.git/Camosun/COMP/139/Lab%205%20-%20Control%20Algorithms/PID_Controller.hpp</file>
+            <file>file:/M:/Camosun.git/Camosun/COMP/139/Lab%205%20-%20Control%20Algorithms/ControllerMain.cpp</file>
         </group>
     </open-files>
 </project-private>

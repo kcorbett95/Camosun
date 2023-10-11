@@ -13,16 +13,20 @@
 #ifndef PID_CONTROLLER_HPP
 #define PID_CONTROLLER_HPP
 
+#include "Controller.hpp"
+
 class PID_Controller : public Controller {
 private:
     const double kP; // The proportional gain
     const double kD; //Derivative gain
     const double kI; //Integral gain
+    double prevOutput; //previous output
+    double prevQ; //previous integral
 public:
 
-    PID_Controller(const double Pgain, const double Dgain, const double Igain) : kP(Pgain), kD(Dgain), kI(Igain) {
+    PID_Controller(const double Pgain, const double Igain, const double Dgain) : kP(Pgain), kI(Igain), kD(Dgain) {
     };
-
+    
     // Our promise to implement the function from the abstract base class
     double controlStep(double plantOutput, double setpoint);
 };
