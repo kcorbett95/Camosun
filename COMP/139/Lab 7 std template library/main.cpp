@@ -67,6 +67,7 @@ int main(int argc, char** argv) {
         cout << "max size of vector is: " << shapes.max_size() << endl;     //max size method
         cout << "out of range test, trying to view 8th element" << endl;
         cout << *shapes.at(8);
+        cout << "printing list in order:" << endl << endl;
         
     }catch (const out_of_range& e) {
         std::cout << e.what() << std::endl; //output what the issue is
