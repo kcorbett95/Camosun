@@ -48,12 +48,13 @@ int main(int argc, char* argv[]) {
      * Since draw() is a virtual function, binding to draw() will be
      * done at run-time, resulting in the correct draw() for each Shape
      */
-    while (!ShapeStack.isEmpty()) {
-        try {
-            ShapeStack.pop()->draw(); //draw shapes
-            ShapeStack.top(); //try to throw exception after popping last shape
-        }catch (const StackException& issue) {
-            std::cout << issue.what() << std::endl; //output what the issue is
+    while(!ShapeStack.isEmpty()){
+        try{
+        ShapeStack.pop()->draw();   //draw shapes
+        ShapeStack.top();   //try to throw exception after popping last shape
+        }
+        catch(const StackException& issue){
+            std::cout << issue.what() << std::endl;   //output what the issue is
         }
     }
     //for (int i = 0; i < N_SHAPES; i++) {
