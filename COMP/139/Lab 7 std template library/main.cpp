@@ -33,6 +33,7 @@ int main(int argc, char** argv) {
     Rectangle r1(10, 20.7, 8, 8);
     Circle c2(11, 10, 5);
     Square s1(5, 5, 3);
+    Square s2(3, 3, 9);
 
     //store shapes in vector
     try {
@@ -55,13 +56,13 @@ int main(int argc, char** argv) {
     try{
         cout << "address of 3rd shape from middle of list: " << shapes[2] << endl;   //output element within list without moving order
         cout << "First element is: " << *shapes.front() << endl; //output front of list
-        cout << "rear element is: " << *shapes.back() << endl;   //output back of list
+        cout << "Last element is: " << *shapes.back() << endl;   //output back of list
         cout << "size of list is: " << shapes.size() << endl;   //output size of list
         cout << "capacity of list is: " << shapes.capacity() << endl;   //output capacity
-        cout << "inserted \"" << s1 <<"\" in position 2" << endl;  //insert method
-        shapes.insert(shapeIT+2,&s1);
+        cout << "inserted \"" << s2 <<"\" in position 2" << endl;  //insert method
+        shapes.insert(shapeIT+2,&s2);
         shapes.pop_back();
-        cout << "top of list deleted" << endl;   //pop_back method
+        cout << "Last element in list deleted" << endl;   //pop_back method
         cout << "value of shape at position 2 is: " << *shapes.at(2) << endl;    //at method
         cout << "max size of vector is: " << shapes.max_size() << endl;     //max size method
         cout << "out of range test, trying to view 8th element" << endl;
