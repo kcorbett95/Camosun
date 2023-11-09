@@ -54,25 +54,25 @@ int main(int argc, char** argv) {
     }
      //[], front, back, size, capacity, insert, pop_back, at, max_size.
     try{
-        cout << "address of 3rd shape from middle of list: " << shapes[2] << endl;   //output element within list without moving order
+        cout << "Address of 3rd shape from middle of list: " << shapes[2] << endl;   //output element within list without moving order
         cout << "First element is: " << *shapes.front() << endl; //output front of list
         cout << "Last element is: " << *shapes.back() << endl;   //output back of list
-        cout << "size of list is: " << shapes.size() << endl;   //output size of list
-        cout << "capacity of list is: " << shapes.capacity() << endl;   //output capacity
-        cout << "inserted \"" << s2 <<"\" in position 2" << endl;  //insert method
+        cout << "Size of list is: " << shapes.size() << endl;   //output size of list
+        cout << "Capacity of list is: " << shapes.capacity() << endl;   //output capacity
+        cout << "Inserted \"" << s2 <<"\" in position 2" << endl;  //insert method
         shapes.insert(shapeIT+2,&s2);
         shapes.pop_back();
         cout << "Last element in list deleted" << endl;   //pop_back method
-        cout << "value of shape at position 2 is: " << *shapes.at(2) << endl;    //at method
-        cout << "max size of vector is: " << shapes.max_size() << endl;     //max size method
-        cout << "out of range test, trying to view 8th element" << endl;
+        cout << "Value of shape at position 2 is: " << *shapes.at(2) << endl;    //at method
+        cout << "Max size of vector is: " << shapes.max_size() << endl;     //max size method
+        cout << "Out of range test, trying to view 8th element" << endl;
         cout << *shapes.at(8);
-        cout << "printing list in order:" << endl << endl;
+        
         
     }catch (const out_of_range& e) {
         std::cout << e.what() << std::endl; //output what the issue is
     }
-    
+    cout << "printing list in order:" << endl << endl;
     for (shapeIT = shapes.begin(); shapeIT != shapes.end(); shapeIT++) {
         try {
             (*shapeIT)->draw();
