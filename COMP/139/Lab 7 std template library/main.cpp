@@ -72,7 +72,7 @@ int main(int argc, char** argv) {
     }catch (const out_of_range& e) {
         std::cout << e.what() << std::endl; //output what the issue is
     }
-    cout << "printing list in order:" << endl << endl;
+    cout << endl << "Printing list in order:" << endl << endl;
     for (shapeIT = shapes.begin(); shapeIT != shapes.end(); shapeIT++) {
         try {
             (*shapeIT)->draw();
